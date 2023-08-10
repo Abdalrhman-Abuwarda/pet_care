@@ -1,4 +1,3 @@
-import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -18,28 +17,6 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   await init();
   sl<NotificationProvider>().initNotification();
-  AwesomeNotifications().initialize(
-    'resource://drawable/ic_launcher',
-    [
-      NotificationChannel(
-        channelKey: 'basic_channel',
-        channelName: 'Basic Notifications',
-        defaultColor: Colors.teal,
-        importance: NotificationImportance.High,
-        channelShowBadge: true,
-        channelDescription: '',
-      ),
-      NotificationChannel(
-        channelKey: 'scheduled_channel',
-        channelName: 'Scheduled Notifications',
-        defaultColor: Colors.teal,
-        locked: true,
-        importance: NotificationImportance.High,
-        // soundSource: 'resource://raw/ic_launcher',
-        channelDescription: '',
-      ),
-    ],
-  );
   sl<AppConfig>().loadData();
   runApp(const MyApp());
 }
@@ -61,10 +38,9 @@ class MyApp extends StatelessWidget {
         designSize: const Size(375, 815),
         builder: (BuildContext context, Widget? child) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Pet Care',
           theme: ThemeManager.lightTheme,
           scaffoldMessengerKey: Helpers.scaffoldKey,
-          // home: const VetsScreen(),
           initialRoute: RouteGenerator.splashScreen,
           navigatorKey: RouteService.serviceNavi.navKey,
           onGenerateRoute: RoutsGenerate.generateRoute,

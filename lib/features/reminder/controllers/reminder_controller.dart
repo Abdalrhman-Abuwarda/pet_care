@@ -133,7 +133,7 @@ class ReminderController extends GetxController {
     createNotification(context, reminder, currentTimeFormat);
     update();
 
-    RouteService.serviceNavi.pop();
+    RouteService.serviceNavi.back();
     titleController.clear();
     descriptionController.clear();
   }

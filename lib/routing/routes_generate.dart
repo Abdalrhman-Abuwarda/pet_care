@@ -2,6 +2,8 @@ part of routing_module;
 
 class RoutsGenerate {
   static Route<dynamic> generateRoute(RouteSettings settings) {
+    final Object? args = settings.arguments;
+
     switch (settings.name) {
       case RouteGenerator.forgetPasswordScreen:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
@@ -128,6 +130,8 @@ class RoutsGenerate {
           initVets();
           return const VetsScreen();
         });
+      case RouteGenerator.vetDetailsScreen:
+        return MaterialPageRoute(builder: (_) => VetDetails(vet: args as MainVetsModel));
       default:
         throw const FormatException("Route not found");
     }

@@ -26,7 +26,7 @@ class _OrderInformationScreenState extends State<OrderInformationScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            RouteService.serviceNavi.pop();
+            RouteService.serviceNavi.back();
             // Handle back button press
           },
         ),

@@ -14,7 +14,7 @@ part of routing_module;
     navKey.currentState?.pushReplacementNamed(routeName);
   }
 
-  pop() {
+  back() {
     navKey.currentState?.pop();
   }
 

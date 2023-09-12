@@ -14,7 +14,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         title: const Text(AppStrings.forgotPassword),
         leading: IconButton(
           onPressed: () {
-            RouteService.serviceNavi.pop();
+            RouteService.serviceNavi.back();
           },
           icon: const Icon(
             Icons.arrow_back,

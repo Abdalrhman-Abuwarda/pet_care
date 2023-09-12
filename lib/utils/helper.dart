@@ -16,7 +16,8 @@ class Helpers {
   // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   static showDialog({required String message , required LoadingStatusOption status}) {
-    Get.dialog(Dialog(
+    Get.dialog(
+        Dialog(
       shape: RoundedRectangleBorder(borderRadius: 16.circularRadius),
       backgroundColor: ColorManager.white,
       child: Padding(
@@ -74,7 +75,7 @@ class CustomAlertDialog extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-              RouteService.serviceNavi.pop();
+              RouteService.serviceNavi.back();
             },
             icon: const Icon(
               Icons.cancel,
@@ -101,7 +102,7 @@ class CustomAlertDialog extends StatelessWidget {
               child: const Text("Ok"),
             ),
             ElevatedButton(
-              onPressed: () => RouteService.serviceNavi.pop(),
+              onPressed: () => RouteService.serviceNavi.back(),
               style: ElevatedButton.styleFrom(
                   side: const BorderSide(color: ColorManager.primary, width: 1),
                   backgroundColor: ColorManager.white,

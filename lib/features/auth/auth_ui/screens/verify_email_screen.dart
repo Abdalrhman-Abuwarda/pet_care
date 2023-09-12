@@ -14,7 +14,7 @@ class VerifyEmailScreen extends StatelessWidget {
         title: const Text(AppStrings.verify),
         leading: IconButton(
           onPressed: () {
-            RouteService.serviceNavi.pop();
+            RouteService.serviceNavi.back();
           },
           icon: const Icon(
             Icons.arrow_back,

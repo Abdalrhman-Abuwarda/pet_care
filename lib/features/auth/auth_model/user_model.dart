@@ -22,22 +22,22 @@ class UserModel {
       isVerified: false,
       phoneNumber: "");
 
-factory UserModel.fromJson(Map<String, dynamic> json) =>UserModel._(
-    email: json["email"],
-    id: json["id"],
-    name: json["name"],
-    isDeleted: json["isDeleted"],
-    isVerified: json["isVerified"],
-    phoneNumber: json["phoneNumber"]);
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel._(
+      email: json["email"],
+      id: json["id"],
+      name: json["name"],
+      isDeleted: json["isDeleted"],
+      isVerified: json["isVerified"],
+      phoneNumber: json["phoneNumber"]);
 
-Map<String , dynamic> toJson() {
-  final Map<String, dynamic> data = <String, dynamic>{};
-  data["id"] = id;
-  data["name"] = name;
-  data["email"] = email;
-  data["isVerified"] = isVerified;
-  data["phoneNumber"] = phoneNumber;
-  data["isDeleted"] = isDeleted;
-  return data;
-}
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["id"] = id;
+    data["name"] = name;
+    data["email"] = email;
+    data["isVerified"] = isVerified;
+    data["phoneNumber"] = phoneNumber;
+    data["isDeleted"] = isDeleted;
+    return data;
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:pet_care/common_widgets/common_widgets.dart';
 import 'package:pet_care/resources/values_manager.dart';
@@ -39,6 +40,35 @@ class Helpers {
 
 
   }
+
+  static showLocationDialog() {
+    Get.dialog(
+        AlertDialog(
+          title: Text("Location Services Disabled"),
+          content: Text("Please enable location services on your device to use this app."),
+          actions: <Widget>[
+            TextButton(
+              child: Text("Cancel"),
+              onPressed: () {
+                Get.back();
+              },
+            ),
+            TextButton(
+              child: Text("Enable Location"),
+              onPressed: () {
+                Get.back();
+                Geolocator.openLocationSettings(); // Open device location settings
+              },
+            ),
+          ],
+        ));
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.back();
+    });
+
+
+  }
+
 
   static showSnackBar({required String message}) {
     scaffoldKey.currentState?.showSnackBar(SnackBar(

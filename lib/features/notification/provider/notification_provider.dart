@@ -9,7 +9,7 @@ import 'package:pet_care/locator.dart';
 import '../../../routing/routing_module.dart';
 
 class NotificationProvider extends ChangeNotifier {
-  Future<void> createPlantFoodNotification() async {
+  Future<void> createReminderNotification() async {
     await sl<AwesomeNotifications>().createNotification(
       content: NotificationContent(
         id: createUniqueId(),

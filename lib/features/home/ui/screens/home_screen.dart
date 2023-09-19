@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 textButton: AppStrings.seeAll,
                 onPressed: () {
                   RouteService.serviceNavi
-                      .pushNamedWidget(RouteGenerator.allVetsDoctorScreen);
+                      .pushNamedWidget(RouteGenerator.findVet);
 
                   // AllPetProducts
                 },

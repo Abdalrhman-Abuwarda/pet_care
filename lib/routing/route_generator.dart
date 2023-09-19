@@ -40,4 +40,5 @@ class RouteGenerator {
   static const String loginScreen = 'loginScreen';
   static const String findArticle = 'findArticle';
   static const String findVet = 'findVet';
+  static const String vetDetailsScreen = 'vetDetailsScreen';
 }

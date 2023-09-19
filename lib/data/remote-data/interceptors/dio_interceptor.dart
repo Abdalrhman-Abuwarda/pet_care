@@ -56,6 +56,7 @@ class DioInterceptor extends Interceptor {
         {
           debugPrint('This is other Type error $err');
           debugPrint(err.response!.statusCode.toString());
+          showErrorSnackBar("Some thing Error");
         }
         break;
       case DioExceptionType.badCertificate:
@@ -69,8 +70,8 @@ class DioInterceptor extends Interceptor {
     super.onError(err, handler);
   }
 
-  void showErrorSnackBar(String message) {
-    Helpers.showSnackBar(message: message);
+  void showErrorSnackBar(String? message) {
+    Helpers.showSnackBar(message: message ?? "Some thing fail");
   }
 
   void handleResponseError(DioException err) {

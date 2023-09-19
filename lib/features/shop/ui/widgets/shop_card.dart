@@ -9,7 +9,6 @@ class ShodCard extends StatelessWidget {
   }) : super(key: key);
   final SingleProduct? singleProduct;
   final bool isList;
-  final SizeConfig sizeConfig = sl<SizeConfig>();
   final Function()? onTap;
   @override
   Widget build(BuildContext context) {

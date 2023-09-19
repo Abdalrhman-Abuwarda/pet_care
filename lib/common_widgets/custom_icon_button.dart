@@ -6,11 +6,13 @@ class CustomIconButton extends StatelessWidget {
   CustomIconButton({
     required this.onTap,
     required this.iconPath,
+    this.size = AppSize.s44,
     Key? key,
   }) : super(key: key);
 
   final String iconPath;
   final void Function()? onTap;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +22,8 @@ class CustomIconButton extends StatelessWidget {
         decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(color: ColorManager.primaryWithTransparent30)),
-        height: sizeConfig.getScreenHeight(AppSize.s44),
-        width: sizeConfig.getScreenWidth(AppSize.s44),
+        height: size.height,
+        width: size.width,
         padding: const EdgeInsets.all(AppSize.s7),
         child: SvgPicture.asset(iconPath),
       ),

@@ -35,7 +35,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         actions: [
           CustomIconButton(
             onTap: () {
-              RouteService.serviceNavi.pop();
+              RouteService.serviceNavi.back();
             },
             iconPath: IconAssets.cancel,
           ),

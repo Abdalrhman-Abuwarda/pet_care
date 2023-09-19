@@ -1,6 +1,7 @@
 part of location_module;
 
 class LocationController extends GetxController {
+
   double latitude = 37.42796133580664;
   double longitude = -122.085749655962;
 
@@ -15,7 +16,6 @@ class LocationController extends GetxController {
   late Position currentPosition;
   String currantAddress = "";
 
-  // List<Placemark> placeMarks =  placemarkFromCoordinates(52.2165157, 6.9437819);
 
   @override
   void onReady() async {

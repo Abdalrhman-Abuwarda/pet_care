@@ -27,7 +27,7 @@ extension TimeExtension on String {
     return DateFormat.yMMMd().format(dateFormat);
   }
 
-  String? differenceDay() {
+  String differenceDay() {
     DateTime dateFormat = DateTime.parse(this);
     final date = Jiffy(DateTime.now()).diff(dateFormat, Units.DAY).toString();
     if (date == "0") {

@@ -14,7 +14,7 @@ class CartScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            RouteService.serviceNavi.back();
+            RouteService.instance.back();
             // Handle back button press
           },
         ),
@@ -175,8 +175,8 @@ class CartScreen extends StatelessWidget {
               onPressed: instance.cartList.isEmpty
                   ? null
                   : () {
-                      RouteService.serviceNavi.pushNamedWidget(
-                          RouteGenerator.orderInformationScreen);
+                      RouteService.instance.pushNamedWidget(
+                          RouteNames.orderInformationScreen);
                     },
               child: const Text("Checkout"),
             ),

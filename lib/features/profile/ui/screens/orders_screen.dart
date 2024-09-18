@@ -86,7 +86,7 @@ class OrdersScreen extends StatelessWidget {
         itemBuilder: (context, element) => Column(
           children: [
             InkWell(
-              onTap: (){RouteService.serviceNavi.pushNamedWidget(RouteGenerator.orderDetailScreen);},
+              onTap: (){RouteService.instance.pushNamedWidget(RouteNames.orderDetailScreen);},
               child: Padding(
                 padding: AppPadding.p24.paddingHorizontal,
                 child: OrdersItem(

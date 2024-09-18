@@ -14,7 +14,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         title: const Text(AppStrings.forgotPassword),
         leading: IconButton(
           onPressed: () {
-            RouteService.serviceNavi.back();
+            RouteService.instance.back();
           },
           icon: const Icon(
             Icons.arrow_back,
@@ -48,8 +48,8 @@ class ForgetPasswordScreen extends StatelessWidget {
                   onPressed: () {
                     if (formKye.currentState!.validate()) {
                       debugPrint("Its Ok Pro");
-                      RouteService.serviceNavi
-                          .pushNamedWidget(RouteGenerator.verifyEmailScreen);
+                      RouteService.instance
+                          .pushNamedWidget(RouteNames.verifyEmailScreen);
                     }
                   },
                   child: const Text(AppStrings.submit)),

@@ -88,8 +88,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             if (provider.activeIndex + 1 >= list.length)
               ElevatedButton(
                 onPressed: () {
-                  RouteService.serviceNavi
-                      .pushNamedReplacement(RouteGenerator.mainAuthScreen);
+                  RouteService.instance
+                      .pushNamedReplacement(RouteNames.mainAuthScreen);
                 },
                 child: const Text(AppStrings.getStarted),
               ),
@@ -97,8 +97,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             if (provider.activeIndex + 1 != list.length)
               TextButton(
                   onPressed: () {
-                    RouteService.serviceNavi
-                        .pushNamedReplacement(RouteGenerator.mainAuthScreen);
+                    RouteService.instance
+                        .pushNamedReplacement(RouteNames.mainAuthScreen);
                   },
                   child: Text(
                     AppStrings.skip,

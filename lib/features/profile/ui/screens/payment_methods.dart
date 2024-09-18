@@ -25,7 +25,7 @@ class PaymentMethodsScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: ElevatedButton(
           onPressed: () {
-            RouteService.serviceNavi.pushNamedWidget(RouteGenerator.addNewPaymentMethodScreen);
+            RouteService.instance.pushNamedWidget(RouteNames.addNewPaymentMethodScreen);
           },
           child: const Text("+ Add new method")),
       appBar: AppBar(

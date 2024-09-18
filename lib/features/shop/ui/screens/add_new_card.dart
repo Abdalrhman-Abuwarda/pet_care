@@ -52,7 +52,7 @@ class _AddNewCardState extends State<AddNewCard> {
       floatingActionButton: ElevatedButton(
         child: const Text(AppStrings.save),
         onPressed: () {
-          RouteService.serviceNavi.back();
+          RouteService.instance.back();
         },
       ),
       body: GestureDetector(

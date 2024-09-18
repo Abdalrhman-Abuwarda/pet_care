@@ -22,8 +22,8 @@ class ReminderScreen extends StatelessWidget {
         actions: [
           CustomIconButton(
               onTap: () {
-                RouteService.serviceNavi
-                    .pushNamedWidget(RouteGenerator.addReminderScreen);
+                RouteService.instance
+                    .pushNamedWidget(RouteNames.addReminderScreen);
               },
               iconPath: IconAssets.plus),
           AppSize.s40.addHorizontalSpace

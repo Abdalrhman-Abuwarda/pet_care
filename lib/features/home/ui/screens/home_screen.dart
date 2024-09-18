@@ -41,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           CustomIconButton(
             onTap: () {
-              RouteService.serviceNavi
-                  .pushNamedWidget(RouteGenerator.searchScreen);
+              RouteService.instance
+                  .pushNamedWidget(RouteNames.searchScreen);
             },
             iconPath: IconAssets.search,
           ),
@@ -125,8 +125,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       padding: const EdgeInsets.only(right: 2),
                                       child: GestureDetector(
                                         onTap: () {
-                                          RouteService.serviceNavi
-                                              .pushNamedWidget(RouteGenerator
+                                          RouteService.instance
+                                              .pushNamedWidget(RouteNames
                                                   .mainAddPetScreen);
                                         },
                                         child: CircleAvatar(
@@ -159,8 +159,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: AppStrings.petShop,
                 textButton: AppStrings.seeAll,
                 onPressed: () {
-                  RouteService.serviceNavi
-                      .pushNamedWidget(RouteGenerator.allPetShopScreen);
+                  RouteService.instance
+                      .pushNamedWidget(RouteNames.allPetShopScreen);
                 },
               ),
               AppSize.s16.addVerticalSpace,
@@ -217,8 +217,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: AppStrings.vets,
                 textButton: AppStrings.seeAll,
                 onPressed: () {
-                  RouteService.serviceNavi
-                      .pushNamedWidget(RouteGenerator.findVet);
+                  RouteService.instance
+                      .pushNamedWidget(RouteNames.findVet);
 
                   // AllPetProducts
                 },
@@ -312,8 +312,8 @@ class AddReminderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        RouteService.serviceNavi
-            .pushNamedWidget(RouteGenerator.addReminderScreen);
+        RouteService.instance
+            .pushNamedWidget(RouteNames.addReminderScreen);
       },
       child: Padding(
         padding: 24.paddingLeft,

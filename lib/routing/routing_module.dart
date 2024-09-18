@@ -24,6 +24,6 @@ import 'package:pet_care/features/vets/vets_module.dart';
 import 'package:pet_care/locator.dart';
 import 'package:provider/provider.dart';
 
-part 'route_generator.dart';
+part 'route_names.dart';
 part 'route_service.dart';
 part 'routes_generate.dart';

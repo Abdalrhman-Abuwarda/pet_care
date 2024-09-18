@@ -14,11 +14,11 @@ class AppConfig extends ChangeNotifier {
 
   onDoneLoading() async {
     if (shared.accessToken == "") {
-      RouteService.serviceNavi
-          .pushNamedAndRemoveUtils(RouteGenerator.mainAuthScreen);
+      RouteService.instance
+          .pushNamedAndRemoveUtils(RouteNames.mainAuthScreen);
     } else {
-      RouteService.serviceNavi
-          .pushNamedAndRemoveUtils(RouteGenerator.mainScreenApp);
+      RouteService.instance
+          .pushNamedAndRemoveUtils(RouteNames.mainScreenApp);
     }
   }
 }

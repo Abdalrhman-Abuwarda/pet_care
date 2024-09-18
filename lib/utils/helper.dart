@@ -105,7 +105,7 @@ class CustomAlertDialog extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {
-              RouteService.serviceNavi.back();
+              RouteService.instance.back();
             },
             icon: const Icon(
               Icons.cancel,
@@ -132,7 +132,7 @@ class CustomAlertDialog extends StatelessWidget {
               child: const Text("Ok"),
             ),
             ElevatedButton(
-              onPressed: () => RouteService.serviceNavi.back(),
+              onPressed: () => RouteService.instance.back(),
               style: ElevatedButton.styleFrom(
                   side: const BorderSide(color: ColorManager.primary, width: 1),
                   backgroundColor: ColorManager.white,

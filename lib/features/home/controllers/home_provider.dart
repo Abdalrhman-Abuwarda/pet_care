@@ -73,8 +73,8 @@ class HomeProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
 
-    RouteService.serviceNavi.pushNamedWidget(
-      RouteGenerator.productDetailsScreen,
+    RouteService.instance.pushNamedWidget(
+      RouteNames.productDetailsScreen,
     );
   }
 }

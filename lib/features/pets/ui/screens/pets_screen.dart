@@ -17,7 +17,7 @@ class _PetsScreenState extends State<PetsScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: InkWell(
         onTap: (){
-          RouteService.serviceNavi.pushNamedWidget(RouteGenerator.findArticle);
+          RouteService.instance.pushNamedWidget(RouteNames.findArticle);
         },
         child: Container(
           padding: EdgeInsets.symmetric(
@@ -43,8 +43,8 @@ class _PetsScreenState extends State<PetsScreen> {
         actions: [
           CustomIconButton(
               onTap: () {
-                RouteService.serviceNavi
-                    .pushNamedWidget(RouteGenerator.mainAddPetScreen);
+                RouteService.instance
+                    .pushNamedWidget(RouteNames.mainAddPetScreen);
               },
               iconPath: IconAssets.plus),
           AppSize.s30.addHorizontalSpace,

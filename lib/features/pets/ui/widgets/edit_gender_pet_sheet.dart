@@ -36,7 +36,7 @@ class EditGenderPetSheet extends StatelessWidget {
           AppSize.s70.addVerticalSpace,
           ElevatedButton(
               onPressed: () {
-                RouteService.serviceNavi.back();
+                RouteService.instance.back();
               },
               child: const Text(AppStrings.done)),
         ],

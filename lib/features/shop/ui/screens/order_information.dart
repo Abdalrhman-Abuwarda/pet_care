@@ -26,7 +26,7 @@ class _OrderInformationScreenState extends State<OrderInformationScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            RouteService.serviceNavi.back();
+            RouteService.instance.back();
             // Handle back button press
           },
         ),
@@ -69,8 +69,8 @@ class _OrderInformationScreenState extends State<OrderInformationScreen> {
                       ),
                       TextButton(
                           onPressed: () {
-                            RouteService.serviceNavi.pushNamedWidget(
-                                RouteGenerator.addNewLocationManual);
+                            RouteService.instance.pushNamedWidget(
+                                RouteNames.addNewLocationManual);
                           },
                           child: Text(
                             "Change",
@@ -99,8 +99,8 @@ class _OrderInformationScreenState extends State<OrderInformationScreen> {
                           size: 14,
                         ),
                         onPressed: () {
-                          RouteService.serviceNavi
-                              .pushNamedWidget(RouteGenerator.addNewCardScreen);
+                          RouteService.instance
+                              .pushNamedWidget(RouteNames.addNewCardScreen);
                         },
                         label: Text(
                           "Add",
@@ -326,7 +326,7 @@ class _OrderInformationScreenState extends State<OrderInformationScreen> {
       floatingActionButton: ElevatedButton(
         child: const Text("Place order"),
         onPressed: () {
-          RouteService.serviceNavi.pushNamedWidget(RouteGenerator.orderSuccess);
+          RouteService.instance.pushNamedWidget(RouteNames.orderSuccess);
         },
       ),
     );

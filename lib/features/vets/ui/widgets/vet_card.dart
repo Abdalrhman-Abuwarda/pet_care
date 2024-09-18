@@ -12,7 +12,7 @@ class VetCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        RouteService.serviceNavi.pushNamedWidget(RouteGenerator.vetDetailsScreen , argument: vet);
+        RouteService.instance.pushNamedWidget(RouteNames.vetDetailsScreen , argument: vet);
       },
       child: Hero(
         tag: vet.image,

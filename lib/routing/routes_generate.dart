@@ -5,48 +5,48 @@ class RoutsGenerate {
     final Object? args = settings.arguments;
 
     switch (settings.name) {
-      case RouteGenerator.forgetPasswordScreen:
+      case RouteNames.forgetPasswordScreen:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
-      case RouteGenerator.verifyEmailScreen:
+      case RouteNames.verifyEmailScreen:
         return MaterialPageRoute(builder: (_) => VerifyEmailScreen());
-      case RouteGenerator.resetPasswordScreen:
+      case RouteNames.resetPasswordScreen:
         return MaterialPageRoute(builder: (_) => ResetPasswordScreen());
-      case RouteGenerator.mainAuthScreen:
+      case RouteNames.mainAuthScreen:
         return MaterialPageRoute(builder: (_) => const MainAuthScreen());
-      case RouteGenerator.mainAddPetScreen:
+      case RouteNames.mainAddPetScreen:
         return MaterialPageRoute(builder: (_) => const MainAppPetScreen());
-      case RouteGenerator.productDetailsScreen:
+      case RouteNames.productDetailsScreen:
         return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
-      case RouteGenerator.cartScreen:
+      case RouteNames.cartScreen:
         return MaterialPageRoute(builder: (_) => const CartScreen());
-      case RouteGenerator.orderInformationScreen:
+      case RouteNames.orderInformationScreen:
         return MaterialPageRoute(
             builder: (_) => ChangeNotifierProvider.value(
                 value: sl<OrderInformationProvide>(),
                 child: const OrderInformationScreen()));
-      case RouteGenerator.addNewCardScreen:
+      case RouteNames.addNewCardScreen:
         return MaterialPageRoute(
             builder: (_) => ChangeNotifierProvider.value(
                 value: sl<CardProvider>(), child: const AddNewCard()));
-      case RouteGenerator.orderSuccess:
+      case RouteNames.orderSuccess:
         return MaterialPageRoute(builder: (_) => const OrderSuccess());
-      case RouteGenerator.editProfileScreen:
+      case RouteNames.editProfileScreen:
         return MaterialPageRoute(builder: (_) => const EditProfileScreen());
-      case RouteGenerator.paymentMethodScreen:
+      case RouteNames.paymentMethodScreen:
         return MaterialPageRoute(builder: (_) => PaymentMethodsScreen());
-      case RouteGenerator.addressScreen:
+      case RouteNames.addressScreen:
         return MaterialPageRoute(builder: (_) => AddressScreen());
-      case RouteGenerator.ordersScreen:
+      case RouteNames.ordersScreen:
         return MaterialPageRoute(builder: (_) => OrdersScreen());
-      case RouteGenerator.appointmentsScreen:
+      case RouteNames.appointmentsScreen:
         return MaterialPageRoute(builder: (_) => const AppointmentsScreen());
-      case RouteGenerator.addNewPaymentMethodScreen:
+      case RouteNames.addNewPaymentMethodScreen:
         return MaterialPageRoute(builder: (_) => AddNewPaymentMethodScreen());
-      case RouteGenerator.orderDetailScreen:
+      case RouteNames.orderDetailScreen:
         return MaterialPageRoute(builder: (_) => const OrderDetailScreen());
-      case RouteGenerator.mainShopScreen:
+      case RouteNames.mainShopScreen:
         return MaterialPageRoute(builder: (_) => const MainShopScreen());
-      case RouteGenerator.allPetShopScreen:
+      case RouteNames.allPetShopScreen:
         return MaterialPageRoute(
             builder: (_) => ChangeNotifierProvider(
                   create: (context) => HomeProvider(),
@@ -55,25 +55,25 @@ class RoutsGenerate {
                       child: const AllPetProducts()),
                 ));
 
-      case RouteGenerator.allVetsDoctorScreen:
+      case RouteNames.allVetsDoctorScreen:
         return MaterialPageRoute(
             builder: (_) => ChangeNotifierProvider.value(
                   value: sl<HomeProvider>(),
                   child: const AllVetsDoctor(),
                 ));
-      case RouteGenerator.addNewLocationManual:
+      case RouteNames.addNewLocationManual:
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider.value(
             value: sl<AddressProvider>(),
             child: const AddNewAddressManually(),
           ),
         );
-      case RouteGenerator.addReminderScreen:
+      case RouteNames.addReminderScreen:
         return MaterialPageRoute(builder: (_) => const AddReminderScreen());
-      case RouteGenerator.mainScreenApp:
+      case RouteNames.mainScreenApp:
         return MaterialPageRoute(builder: (_) => const MainScreenApp());
 
-      case RouteGenerator.searchScreen:
+      case RouteNames.searchScreen:
         return MaterialPageRoute(
           builder: (_) {
             return ChangeNotifierProvider.value(
@@ -86,7 +86,7 @@ class RoutsGenerate {
           },
         );
 
-      case RouteGenerator.homeScreen:
+      case RouteNames.homeScreen:
         return MaterialPageRoute(
           builder: (_) {
             return ChangeNotifierProvider.value(
@@ -96,44 +96,56 @@ class RoutsGenerate {
           },
         );
 
-      case RouteGenerator.splashScreen:
+      case RouteNames.splashScreen:
         return MaterialPageRoute(
           builder: (_) {
             return const SplashScreen();
           },
         );
 
-      case RouteGenerator.loginScreen:
+      case RouteNames.loginScreen:
         return MaterialPageRoute(
           builder: (_) {
             return LoginScreen();
           },
         );
-      case RouteGenerator.reminderScreen:
+      case RouteNames.reminderScreen:
         return MaterialPageRoute(builder: (_) => ReminderScreen());
-      case RouteGenerator.successAddPatScreen:
+      case RouteNames.successAddPatScreen:
         return MaterialPageRoute(builder: (_) => const SuccessAddPatScreen());
-      case RouteGenerator.editPetInfo:
+      case RouteNames.editPetInfo:
         return MaterialPageRoute(builder: (_) {
           return const EditPetInfo();
         });
-      case RouteGenerator.findArticle:
+      case RouteNames.findArticle:
         return MaterialPageRoute(
             builder: (_) {
               initArticle();
               return ChangeNotifierProvider.value(
                 value: sl<ArticleController>(), child: const FindArticle());});
-      case RouteGenerator.addNewLocation:
+      case RouteNames.addNewLocation:
         return MaterialPageRoute(builder: (_) => AddNewAddressScreen());
-      case RouteGenerator.findVet:
+      case RouteNames.findVet:
         return MaterialPageRoute(builder: (_) {
           initVets();
           return const VetsScreen();
         });
-      case RouteGenerator.vetDetailsScreen:
-        return MaterialPageRoute(builder: (_) => VetDetails(vet: args as MainVetsModel));
+      case RouteNames.vetDetailsScreen:
+        if (args is MainVetsModel) {
+          MaterialPageRoute(builder: (_) => VetDetails(vet: args));
+        }
+        return _errorRoute();
       default:
         throw const FormatException("Route not found");
     }
+  }
+
+  static Route<dynamic> _errorRoute() {
+    return MaterialPageRoute(builder: (_) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Error')),
+        body: const Center(child: Text('Page not found')),
+      );
+    });
   }
 }

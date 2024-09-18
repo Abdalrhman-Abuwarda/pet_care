@@ -14,7 +14,7 @@ class ResetPasswordScreen extends StatelessWidget {
         title: const Text(AppStrings.resetPassword),
         leading: IconButton(
           onPressed: () {
-            RouteService.serviceNavi.back();
+            RouteService.instance.back();
           },
           icon: const Icon(
             Icons.arrow_back,
@@ -52,7 +52,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   onPressed: () {
                     if (formKye.currentState!.validate()) {
                       debugPrint("This is ok");
-                      RouteService.serviceNavi.pushNamedReplacement(RouteGenerator.mainAuthScreen);
+                      RouteService.instance.pushNamedReplacement(RouteNames.mainAuthScreen);
                     }
                   },
                   child: const Text(AppStrings.change)),

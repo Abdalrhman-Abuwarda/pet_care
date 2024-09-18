@@ -18,7 +18,7 @@ Widget selectLocationType(AddressProvider instance) {
             const Spacer(),
             IconButton(
                 onPressed: () {
-                  RouteService.serviceNavi.back();
+                  RouteService.instance.back();
                 },
                 icon: const Icon(Icons.cancel, color: ColorManager.primary))
           ],
@@ -39,7 +39,7 @@ Widget selectLocationType(AddressProvider instance) {
                         onTap: () {
                           instance.selectAddress(
                               address: instance.addressModel!.address![index]);
-                          RouteService.serviceNavi.back();
+                          RouteService.instance.back();
                         },
                         child: Text(
                           "${instance.addressModel!.address![index].type}",

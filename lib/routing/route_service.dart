@@ -3,7 +3,7 @@ part of routing_module;
   class RouteService {
   RouteService._();
 
-  static RouteService serviceNavi = RouteService._();
+  static final RouteService instance = RouteService._();
   GlobalKey<NavigatorState> navKey = GlobalKey<NavigatorState>();
 
   pushNamedWidget(String routeName, { Object? argument}) {

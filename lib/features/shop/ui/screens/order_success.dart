@@ -10,8 +10,8 @@ class OrderSuccess extends StatelessWidget {
       floatingActionButton: ElevatedButton(
         child: const Text("Keep browsing"),
         onPressed: () {
-          RouteService.serviceNavi
-              .pushNamedAndRemoveUtils(RouteGenerator.mainScreenApp);
+          RouteService.instance
+              .pushNamedAndRemoveUtils(RouteNames.mainScreenApp);
         },
       ),
       body: Column(

@@ -23,12 +23,12 @@ class SuccessAddPatScreen extends StatelessWidget {
                 style: supTitleMedium, textAlign: TextAlign.center),
             const Spacer(),
             ElevatedButton(
-                onPressed: () {RouteService.serviceNavi.pushNamedWidget(RouteGenerator.mainAddPetScreen);},
+                onPressed: () {RouteService.instance.pushNamedWidget(RouteNames.mainAddPetScreen);},
                 child: const Text("Add another Pet")),
             const RVerticalSpace(height: AppSize.s20),
             TextButton(
                 onPressed: () {
-                  RouteService.serviceNavi.pushNamedReplacement(RouteGenerator.mainScreenApp);
+                  RouteService.instance.pushNamedReplacement(RouteNames.mainScreenApp);
                 },
                 child: Text(
                   "Go to home page",

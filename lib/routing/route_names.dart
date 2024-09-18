@@ -1,7 +1,7 @@
 part of routing_module;
 
-class RouteGenerator {
-  RouteGenerator._();
+class RouteNames {
+  RouteNames._();
 
   static const String forgetPasswordScreen = '/forgetPassword';
   static const String resetPasswordScreen = '/resetPassword';

@@ -79,7 +79,7 @@ class NotificationProvider extends ChangeNotifier {
     await sl<AwesomeNotifications>().isNotificationAllowed().then((isAllowed) {
       if (!isAllowed) {
         showDialog(
-          context: RouteService.serviceNavi.navKey.currentContext!,
+          context: RouteService.instance.navKey.currentContext!,
           builder: (context) => AlertDialog(
             title: const Text('Allow Notifications'),
             content: const Text('Our app would like to send you notifications'),
@@ -121,8 +121,8 @@ class NotificationProvider extends ChangeNotifier {
                   sl<AwesomeNotifications>().setGlobalBadgeCounter(value - 1),
             );
       }
-      RouteService.serviceNavi
-          .pushNamedAndRemoveUtils(RouteGenerator.mainScreenApp);
+      RouteService.instance
+          .pushNamedAndRemoveUtils(RouteNames.mainScreenApp);
     });
   }
 

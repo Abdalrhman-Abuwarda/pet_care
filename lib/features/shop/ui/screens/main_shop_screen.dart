@@ -30,8 +30,8 @@ class _MainShopScreenState extends State<MainShopScreen> {
             actions: [
               InkWell(
                 onTap: () {
-                  RouteService.serviceNavi
-                      .pushNamedWidget(RouteGenerator.cartScreen);
+                  RouteService.instance
+                      .pushNamedWidget(RouteNames.cartScreen);
                 },
                 child: Center(
                   child: Badge(
